@@ -15,13 +15,11 @@ export default class SelectHandler extends Event {
     const customId = interaction.customId;
     const selectData = selects.get(customId);
 
-    if (!selectData) {
-      discordLogger.warn("Missing select '" + customId + "'.");
-      return;
-    }
+    if (!selectData)
+      return discordLogger.warn("Missing select '" + customId + "'.");
 
     const userPermissions = interaction.memberPermissions;
-    if (!userPermissions) {
+    if (!userPermissions)
       return interaction.reply({
         embeds: [
           new MessageEmbed()
@@ -29,7 +27,6 @@ export default class SelectHandler extends Event {
             .setDescription("You cannot use that command here."),
         ],
       });
-    }
 
     try {
       selectData.exec(interaction);

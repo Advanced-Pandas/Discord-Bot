@@ -15,13 +15,11 @@ export default class ButtonHandler extends Event {
     const customId = interaction.customId;
     const buttonData = buttons.get(customId);
 
-    if (!buttonData) {
-      discordLogger.warn("Missing button '" + customId + "'.");
-      return;
-    }
+    if (!buttonData)
+      return discordLogger.warn("Missing button '" + customId + "'.");
 
     const userPermissions = interaction.memberPermissions;
-    if (!userPermissions) {
+    if (!userPermissions)
       return interaction.reply({
         embeds: [
           new MessageEmbed()
@@ -29,7 +27,6 @@ export default class ButtonHandler extends Event {
             .setDescription("You cannot use that command here."),
         ],
       });
-    }
 
     try {
       buttonData.exec(interaction);

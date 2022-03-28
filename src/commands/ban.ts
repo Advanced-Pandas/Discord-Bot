@@ -33,7 +33,6 @@ export default class BanCommand extends SlashCommand {
         ),
       [
         {
-          // moderator role
           id: configIds.moderatorRole,
           type: "ROLE",
           permission: true,

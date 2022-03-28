@@ -119,7 +119,7 @@ export const configIds = {
   ticketLogs: "957848085579587626",
   ticketLogsClosed: "957847067710062623",
   ticketCategory: "957841972909989888",
-  moderatorRole: "870743541704425472",
+  moderatorRole: "911148466955227156",
   guild: "818200489094021170",
   tutorRole: "846512715001495553",
   mutedRole: "859904980014465034",

@@ -15,10 +15,8 @@ export default class CommandHandler extends Event {
     const commandName = interaction.commandName;
     const commandData = commands.get(commandName.toLowerCase());
 
-    if (!commandData) {
-      discordLogger.warn("Missing command '" + commandName + "'.");
-      return;
-    }
+    if (!commandData)
+      return discordLogger.warn("Missing command '" + commandName + "'.");
 
     try {
       await commandData.exec(interaction);

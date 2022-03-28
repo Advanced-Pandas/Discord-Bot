@@ -72,6 +72,7 @@ export default class ReadyEvent extends Event {
           const guildCommand = await guild.commands.create(
             command.build(client)
           );
+          console.log(guildCommand.permissions);
           if (command.userPermissions)
             await guildCommand.permissions.set({
               permissions: command.userPermissions,
