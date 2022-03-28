@@ -5,7 +5,7 @@ import {
   MessageEmbed,
   MessageSelectMenu,
 } from "discord.js";
-import { ticketLogger } from "..";
+import { configIds, ticketLogger } from "..";
 
 export default class TicketOpenButton extends Button {
   constructor() {
@@ -17,7 +17,21 @@ export default class TicketOpenButton extends Button {
       `ticket-${interaction.user.id}`,
       {
         type: "GUILD_TEXT",
-        parent: "953053710240604185",
+        parent: configIds.ticketCategory,
+        permissionOverwrites: [
+          {
+            id: interaction.user.id,
+            allow: ["VIEW_CHANNEL", "SEND_MESSAGES"],
+          },
+          {
+            id: configIds.tutorRole,
+            allow: ["VIEW_CHANNEL", "SEND_MESSAGES"],
+          },
+          {
+            id: interaction.guild.id,
+            deny: ["VIEW_CHANNEL", "SEND_MESSAGES"],
+          },
+        ],
       }
     );
 

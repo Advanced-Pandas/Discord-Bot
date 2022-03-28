@@ -108,19 +108,19 @@ async function loadSelects(dir = path.resolve(__dirname, "./selects")) {
 
 Promise.all([loadEvents(), loadCommands(), loadButtons(), loadSelects()]).then(
   () => {
-    discordLogger.info("Finished loading commands and events.");
+    discordLogger.info("Finished loading.");
     discordLogger.info("Connecting to Discord...");
     client.login(process.env.TOKEN);
   }
 );
 
 export const configIds = {
-  guild: "953053708562870312",
-  moderatorLogs: "953053709909250134",
-  ticketLogs: "953053709909250136",
-  ticketLogsClosed: "953053709909250137",
-  ticketChannel: "953053710240604181",
-  ticketCategory: "953053710240604185",
-  moderatorRole: "953053708994875526",
-  mutedRole: "954201144480104458",
+  moderatorLogs: "957728595000844340",
+  ticketLogs: "957848085579587626",
+  ticketLogsClosed: "957847067710062623",
+  ticketCategory: "957841972909989888",
+  moderatorRole: "870743541704425472",
+  guild: "818200489094021170",
+  tutorRole: "846512715001495553",
+  mutedRole: "859904980014465034",
 };

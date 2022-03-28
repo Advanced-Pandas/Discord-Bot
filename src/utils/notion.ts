@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/ban-ts-comment */
 import { Client } from "@notionhq/client";
 import { config } from "dotenv";
 config();
@@ -37,7 +36,6 @@ export async function createTranscriptEntry(transcript: {
     parent: {
       database_id,
     },
-    // @ts-ignore
     properties,
   });
 }
@@ -49,7 +47,6 @@ export async function deleteTranscriptEntry(block_id: string) {
     block_id,
   });
 
-  // @ts-ignore
   if (page.results.length) return null;
   return notion.blocks.delete({
     block_id,
@@ -70,12 +67,12 @@ export async function createTranscriptNotion({
       object: "block",
       type: "code",
       code: {
-        text: [],
+        rich_text: [],
         language: "html",
       },
     });
     for (let i = 0; i < htmlString.length; i += 2000) {
-      children[0].code.text.push({
+      children[0].code.rich_text.push({
         type: "text",
         text: { content: htmlString.substring(i, i + 2000) },
       });
@@ -84,7 +81,6 @@ export async function createTranscriptNotion({
 
   return notion.blocks.children.append({
     block_id,
-    // @ts-ignore
     children,
   });
 }
