@@ -26,6 +26,15 @@ export default class ReadyEvent extends Event {
     const guild = await client.guilds.fetch(configIds.guild);
 
     {
+      const apRoles = [
+        "847966962096013312",
+        "847967105583153153",
+        "847967168460750921",
+        "847967258970292264",
+      ];
+    }
+
+    {
       Bans.find().then((bans) => {
         bans.forEach((ban) => {
           if (Date.parse(ban.createdAt) + ban.duration <= Date.now()) return;
