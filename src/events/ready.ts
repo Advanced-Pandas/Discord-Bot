@@ -82,10 +82,14 @@ export default class ReadyEvent extends Event {
             command.build(client)
           );
           console.log(guildCommand.permissions);
-          if (command.userPermissions)
-            await guildCommand.permissions.set({
-              permissions: command.userPermissions,
-            });
+          if (command.userPermissions) {
+            try {
+              await guildCommand.permissions.set({
+                permissions: command.userPermissions,
+              });
+            } catch {}
+          }
+
           discordLogger.debug(`Deployed command ${command.metaData.name}.`);
         }
 
