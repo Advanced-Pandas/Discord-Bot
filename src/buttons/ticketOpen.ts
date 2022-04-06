@@ -27,10 +27,10 @@ export default class TicketOpenButton extends Button {
             id: configIds.tutorRole,
             allow: ["VIEW_CHANNEL", "SEND_MESSAGES"],
           },
-          {
-            id: interaction.guild.id,
-            deny: ["VIEW_CHANNEL", "SEND_MESSAGES"],
-          },
+          // {
+          //   id: interaction.guild.id,
+          //   deny: ["VIEW_CHANNEL", "SEND_MESSAGES"],
+          // },
         ],
       }
     );
