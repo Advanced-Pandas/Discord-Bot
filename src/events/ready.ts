@@ -87,7 +87,11 @@ export default class ReadyEvent extends Event {
               await guildCommand.permissions.set({
                 permissions: command.userPermissions,
               });
-            } catch {}
+            } catch {
+              discordLogger.warn(
+                `Failed to set permissions for command ${command.metaData.name}.`
+              );
+            }
           }
 
           discordLogger.debug(`Deployed command ${command.metaData.name}.`);

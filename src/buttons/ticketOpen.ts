@@ -19,14 +19,14 @@ export default class TicketOpenButton extends Button {
         type: "GUILD_TEXT",
         parent: configIds.ticketCategory,
         permissionOverwrites: [
-          {
-            id: interaction.user.id,
-            allow: ["VIEW_CHANNEL", "SEND_MESSAGES"],
-          },
-          {
-            id: configIds.tutorRole,
-            allow: ["VIEW_CHANNEL", "SEND_MESSAGES"],
-          },
+          // {
+          //   id: interaction.user.id,
+          //   allow: ["VIEW_CHANNEL", "SEND_MESSAGES"],
+          // },
+          // {
+          //   id: configIds.tutorRole,
+          //   allow: ["VIEW_CHANNEL", "SEND_MESSAGES"],
+          // },
           // {
           //   id: interaction.guild.id,
           //   deny: ["VIEW_CHANNEL", "SEND_MESSAGES"],
@@ -35,7 +35,7 @@ export default class TicketOpenButton extends Button {
       }
     );
 
-    channel.permissionOverwrites.edit(interaction.user.id, {
+    await channel.permissionOverwrites.edit(interaction.user.id, {
       VIEW_CHANNEL: true,
     });
 
@@ -57,13 +57,13 @@ export default class TicketOpenButton extends Button {
         { label: "Other", value: "other" },
       ]);
 
-    channel.send({
+    await channel.send({
       content: `<@${interaction.user.id}>`,
       embeds: [embed],
       components: [new MessageActionRow().addComponents(select)],
     });
 
-    interaction.reply({
+    await interaction.reply({
       content: `${interaction.user} Ticket created! <#${channel.id}>`,
       ephemeral: true,
     });
