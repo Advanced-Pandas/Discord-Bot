@@ -3,7 +3,7 @@ import { config } from "dotenv";
 config();
 
 const notion = new Client({
-  auth: process.env.NOTION_TOKEN,
+  auth: process.env.NOTION,
 });
 
 // const database_id = "81dd715531a34aa89063179bc427b0b6";
