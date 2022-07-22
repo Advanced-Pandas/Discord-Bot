@@ -29,7 +29,7 @@
     "@notionhq/client": "^1.0.3",
     "bunyan": "^1.8.15",
     "bunyan-format": "^0.2.1",
-    "discord-api-types": "^0.30.0",
+    "discord-api-types": "^0.36.3",
     "discord-html-transcripts": "^2.2.7",
     "discord.js": "^13.6.0",
     "dotenv": "^16.0.0",
