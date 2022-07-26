@@ -51,13 +51,13 @@ export default class TicketCloseButton extends Button {
       components: [staffButtons],
     });
 
-    interaction.message.components.forEach((component) => {
-      (component as MessageActionRow).components.forEach(
-        (button: MessageButton) => {
-          button.setDisabled();
-        }
-      );
-    });
+    // interaction.message.components.forEach((component) => {
+    //   (component as MessageActionRow).components.forEach(
+    //     (button: MessageButton) => {
+    //       button.setDisabled();
+    //     }
+    //   );
+    // });
 
     (interaction.message as Message).edit({
       components: interaction.message.components as MessageActionRow[],
