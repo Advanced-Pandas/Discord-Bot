@@ -58,7 +58,7 @@ export default class TicketTypeSelect extends Select {
       components: [
         new MessageActionRow().addComponents(
           new MessageButton()
-            .setCustomId("ticketConfirm")
+            .setCustomId("ticketClose")
             .setLabel("Close Ticket")
             .setEmoji("❌")
             .setStyle("DANGER")

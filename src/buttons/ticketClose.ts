@@ -32,11 +32,11 @@ export default class TicketCloseButton extends Button {
   }
 
   async exec(interaction: ButtonInteraction) {
-    if (interaction.message.embeds[0]?.footer?.text != interaction.user.tag)
-      return interaction.reply({
-        content: "You can't interact here.",
-        ephemeral: true,
-      });
+    // if (interaction.message.embeds[0]?.footer?.text != interaction.user.tag)
+    //   return interaction.reply({
+    //     content: "You can't interact here.",
+    //     ephemeral: true,
+    //   });
     const channel = interaction.channel as TextChannel;
 
     await channel.permissionOverwrites.edit(
