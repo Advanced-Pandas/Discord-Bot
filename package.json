@@ -30,7 +30,7 @@
     "bunyan": "^1.8.15",
     "bunyan-format": "^0.2.1",
     "discord-api-types": "^0.37.2",
-    "discord-html-transcripts": "^2.2.7",
+    "discord-html-transcripts": "^3.0.0",
     "discord.js": "^14.2.0",
     "dotenv": "^16.0.0",
     "mongoose": "^6.2.0",
